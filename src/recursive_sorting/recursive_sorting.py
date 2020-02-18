@@ -3,26 +3,27 @@ Recursive sorting module
 """
 
 
-def merge(arrA, arrB):
+def merge(arr_a, arr_b):
     """
     Merge Sort helper function
     """
     merged_arr = []
 
-    while len(arrA) > 0 and len(arrB) > 0:
-        if arrA[0] > arrB[0]:
-            merged_arr.append(arrB[0])
-            arrB.pop(0)
-        merged_arr.append(arrA[0])
-        arrA.pop(0)
+    while len(arr_a) > 0 and len(arr_b) > 0:
+        if arr_a[0] > arr_b[0]:
+            merged_arr.append(arr_b[0])
+            arr_b.pop(0)
+        else:
+            merged_arr.append(arr_a[0])
+            arr_a.pop(0)
 
-    while len(arrA) > 0:
-        merged_arr.append(arrA[0])
-        arrA.pop(0)
+    while len(arr_a) > 0:
+        merged_arr.append(arr_a[0])
+        arr_a.pop(0)
 
-    while len(arrB) > 0:
-        merged_arr.append(arrB[0])
-        arrB.pop(0)
+    while len(arr_b) > 0:
+        merged_arr.append(arr_b[0])
+        arr_b.pop(0)
     # TO-DO
 
     return merged_arr
@@ -36,15 +37,11 @@ def merge_sort(arr):
     """
     Merge sort implementation
     """
-    # TO-DO
-    base = len(arr)
 
-    # Once our arrays have been reduced to
-    # A single element
-    if base == 1:
+    if len(arr) <= 1:
         return arr
 
-    half = base//2
+    half = len(arr)//2
 
     # Python slice api is bae
     split_a = arr[half:]
@@ -57,27 +54,23 @@ def merge_sort(arr):
     return merge(split_a, split_b)
 
 
-print(merge_sort([8, 9, 1, 4, 12, 6, 133]))
+# print(merge_sort([8, 9, 1, 4, 12, 6, 133]))
 # STRETCH: implement an in-place merge sort algorithm
 
 
-def merge_in_place(arr, start, mid, end):
-    """
-    In-Place Merge sort with O(1) space complexity
-    """
+# def merge_in_place(arr, start, mid, end):
+    # """
+    # In-Place Merge sort with O(1) space complexity
+    # """
     # TO-DO
 
-    return arr
 
-
-def merge_sort_in_place(arr, l, r):
+# def merge_sort_in_place(arr, l, r):
     # TO-DO
 
-    return arr
+    # STRETCH: implement the Timsort function below
+    # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 
+    # def timsort(arr):
 
-# STRETCH: implement the Timsort function below
-# hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort(arr):
-
-    return arr
+    #     return arr
